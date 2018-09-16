@@ -30,10 +30,10 @@
     service: name=tomcat state=started enabled=yes
 
   - name: Configure Tomcat server
-    copy: src=server.xml dest=/usr/share/tomcat/conf/
+    template: src=server.xml.j2 dest=/usr/share/tomcat/conf/
     notify: restart tomcat
 
   - name: Configure Tomcat users
-    copy: src=tomcat-users.xml dest=/usr/share/tomcat/conf/
+    copy: src=tomcat-users.xml.j2 dest=/usr/share/tomcat/conf/
     notify: restart tomcat
 
