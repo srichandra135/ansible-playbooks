@@ -1,4 +1,4 @@
 ---
-- hosts: local
+- hosts: group1
   roles:
    - tomcatinst
