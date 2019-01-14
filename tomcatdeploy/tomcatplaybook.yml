@@ -36,11 +36,11 @@
     service: name=tomcat state=started enabled=yes
 
   - name: Configure Tomcat server
-    template: src=server.xml.j2 dest=/usr/share/tomcat/conf/
+    template: src=server.xml.j2 dest=/usr/share/tomcat/conf/server.xml
     notify: restart tomcat
 
   - name: Configure Tomcat users
-    template: src=tomcat-users.xml.j2 dest=/usr/share/tomcat/conf/
+    template: src=tomcat-users.xml.j2 dest=/usr/share/tomcat/conf/tomcat-users.xml
     notify: restart tomcat
 
   
